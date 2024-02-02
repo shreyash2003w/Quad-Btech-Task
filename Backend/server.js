@@ -40,6 +40,9 @@ async function fetchAndStoreData() {
   }
 }
 
+app.get("/",(req,res)=>{
+    return res.send("Server is running well...")
+})
 app.get("/api/data", async (req, res) => {
   try {
     const data = await Crypto.find({}, "-_id -__v").lean();
